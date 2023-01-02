@@ -10,6 +10,7 @@ terraform {
   }
 }
 
+# Bucket Key
 resource "aws_kms_key" "bucket-key" {
   description             = "This key is used to encrypt bucket objects"
 }
