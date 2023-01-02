@@ -15,6 +15,6 @@ resource "aws_kms_key" "bucket-key" {
 }
 
 resource "aws_kms_alias" "key-alias" {
- name          = "alias/bucket-key"
+ name          = "alias/bucket-key-master"
  target_key_id = aws_kms_key.bucket-key.key_id
 }
