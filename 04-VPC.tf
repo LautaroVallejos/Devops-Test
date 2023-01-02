@@ -1,4 +1,4 @@
-# VPC configure
+# VPC Configure
 resource "aws_vpc" "devops_vpc" {
   cidr_block = "10.0.0.0/16"
   enable_dns_support = "true"
@@ -11,7 +11,7 @@ resource "aws_vpc" "devops_vpc" {
   }
 }
 
-# Subnet settings
+# Subnet Settings
 resource "aws_subnet" "server_subnet" {
   vpc_id            = aws_vpc.devops_vpc.id
   cidr_block        = "10.0.1.0/24"
@@ -23,7 +23,7 @@ resource "aws_subnet" "server_subnet" {
   }
 }
 
-# Internet gateway setting
+# Internet Gateway setting
 resource "aws_internet_gateway" "internet_door" {
   vpc_id = aws_vpc.devops_vpc.id
 
@@ -32,7 +32,7 @@ resource "aws_internet_gateway" "internet_door" {
   }
 }
 
-# Route table
+# Route Table
 resource "aws_route_table" "route_table" {
   vpc_id = aws_vpc.devops_vpc.id
   
@@ -46,13 +46,13 @@ resource "aws_route_table" "route_table" {
   }
 }
 
-# Route association
+# Route Association
 resource "aws_route_table_association" "table_association" {
   subnet_id      = aws_subnet.server_subnet.id
   route_table_id = aws_route_table.route_table.id
 }
 
-# Security grop
+# Security Group
 resource "aws_security_group" "firewall" {
   vpc_id = aws_vpc.devops_vpc.id
 

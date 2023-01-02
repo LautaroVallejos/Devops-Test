@@ -1,6 +1,6 @@
 # IAM Settings
 resource "aws_iam_user" "user" {
-  name = "test-user"
+  name = "Devops-User"
 }
 
 # Role

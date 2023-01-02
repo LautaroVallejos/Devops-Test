@@ -1,5 +1,7 @@
 # Variables Declaration (setted in terraform.tfvars)
-# You should also change the variable names in state.tf
+# if not exist this file, create it and assign this variables that are below
+# You should also change the variable names in State.tf
+
 variable "region" {}
 
 variable "bucket" {}
