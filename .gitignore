@@ -35,4 +35,4 @@ terraform.rc
 
 #===================
 # Custom by Lautaro
-.terraform.lock.hcl
+#.terraform.lock.hcl
